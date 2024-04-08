@@ -1,0 +1,32 @@
+<%- include('../partials/_header.ejs') %>
+<h1>Add New Flight</h1>
+<form action="/flights" method="POST">
+  <div>
+    <label for="airline">Airline:</label>
+    <select name="airline" id="airline" required>
+      <option value="American">American</option>
+      <option value="Southwest">Southwest</option>
+      <option value="United">United</option>
+    </select>
+  </div>
+  <div>
+    <label for="airport">Airport:</label>
+    <select name="airport" id="airport" required>
+      <option value="AUS">AUS</option>
+      <option value="DFW">DFW</option>
+      <option value="DEN" selected>DEN</option>
+      <option value="LAX">LAX</option>
+      <option value="SAN">SAN</option>
+    </select>
+  </div>
+  <div>
+    <label for="flightNo">Flight Number:</label>
+    <input type="number" name="flightNo" id="flightNo" required />
+  </div>
+  <div>
+    <label for="departs">Departure Date and Time:</label>
+    <input type="datetime-local" name="departs" id="departs" />
+  </div>
+  <button type="submit">Add Flight</button>
+</form>
+<%- include('../partials/_footer.ejs') %>
