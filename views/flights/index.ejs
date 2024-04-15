@@ -1,11 +1,14 @@
 <%- include('../partials/_header.ejs') %>
 <h1>All Flights</h1>
 <ul>
-  <% flights.forEach(function(flight) { %>
+  <% if (flights && flights.length > 0) { %> <% flights.forEach(function(flight)
+  { %>
   <li>
     <%= flight.airline %> - Flight <%= flight.flightNo %>, Departs from <%=
     flight.airport %> on <%= flight.departs.toDateString() %>
   </li>
-  <% }) %>
+  <% }) %> <% } else { %>
+  <li>No flights available.</li>
+  <% } %>
 </ul>
 <%- include('../partials/_footer.ejs') %>
